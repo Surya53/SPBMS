@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <!--Configure DEpendent Classes -->
+        <bean id="dtdc" class="com.surya.comp.DTDC"/>
+        <bean id="bDart" class="com.surya.comp.BlueDart"/>
+        <bean id="fex" class="com.surya.comp.Fedex"/>
+        
+        <!--cfg Target class -->
+        <bean id="fpkt" class="com.surya.comp.Flipkart">
+          <property name="courier" ref="dtdc"/>
+        </bean>
+ </beans>
